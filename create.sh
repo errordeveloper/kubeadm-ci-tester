@@ -19,7 +19,11 @@ done
 
 token="--token=d9e800.955fc7f8f87970e6"
 
-kubectl_exec "master-00" kubeadm init "${token}"
+env=(
+  "KUBE_HYPERKUBE_IMAGE=gcr.io/kubeadm/hyperkube-amd64:test-master-6df609e5a0d22c481222030e36f6ed6cf26e80cf-30"
+)
+
+kubectl_exec "master-00" env "${env[@]}" kubeadm init "${token}"
 kubectl_exec "master-00" kubectl get nodes --output=wide
 master_ip="$(kubectl get pod "${namespace}" master-00 --output="go-template={{.status.podIP}}")"
 
