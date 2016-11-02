@@ -8,7 +8,7 @@ items:
     spec:
       containers:
         - name: kubernetes-host
-          image: gcr.io/kubeadm/ci-xenial-systemd:test-master-6df609e5a0d22c481222030e36f6ed6cf26e80cf-30
+          image: gcr.io/kubeadm/ci-xenial-systemd:test-master-eec953605e630ebb179dfc3ed0354916235e5a16-36
           securityContext:
             privileged: true
   - apiVersion: v1
@@ -18,7 +18,7 @@ items:
     spec:
       containers:
         - name: kubernetes-host
-          image: gcr.io/kubeadm/ci-xenial-systemd:test-master-6df609e5a0d22c481222030e36f6ed6cf26e80cf-30
+          image: gcr.io/kubeadm/ci-xenial-systemd:test-master-eec953605e630ebb179dfc3ed0354916235e5a16-36
           securityContext:
             privileged: true
   - apiVersion: v1
@@ -28,6 +28,6 @@ items:
     spec:
       containers:
         - name: kubernetes-host
-          image: gcr.io/kubeadm/ci-xenial-systemd:test-master-6df609e5a0d22c481222030e36f6ed6cf26e80cf-30
+          image: gcr.io/kubeadm/ci-xenial-systemd:test-master-eec953605e630ebb179dfc3ed0354916235e5a16-36
           securityContext:
             privileged: true

@@ -1,5 +1,19 @@
 #!/bin/bash -eux
 
+# Copyright 2016 The Kubernetes Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 ns="${1}"
 namespace="--namespace=${ns}"
 
@@ -20,7 +34,7 @@ done
 token="--token=d9e800.955fc7f8f87970e6"
 
 env=(
-  "KUBE_HYPERKUBE_IMAGE=gcr.io/kubeadm/hyperkube-amd64:test-master-6df609e5a0d22c481222030e36f6ed6cf26e80cf-30"
+  DUMMY=1 # "KUBE_HYPERKUBE_IMAGE=gcr.io/kubeadm/hyperkube-amd64:test-master-eec953605e630ebb179dfc3ed0354916235e5a16-36"
 )
 
 kubectl_exec "master-00" env "${env[@]}" kubeadm init "${token}"
